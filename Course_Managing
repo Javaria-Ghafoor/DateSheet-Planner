@@ -1,0 +1,108 @@
+#include "Header.h"
+#include <iostream>
+
+using namespace std;
+
+Course_Managing::Course_Managing() {};
+
+int Course_Managing::votingdata[5][2][8][10] = { 0 };
+/*The dimension controls:
+1st: which Day of week?
+2nd: 1 paper or 2? and which paper? - holds name data
+3rd: sem number?
+4th: vote number per semester
+*/
+
+int Course_Managing::copy[5][2][8][10] = { 0 };
+
+int Course_Managing::arrangement[5][2][8] = { 0 };
+
+void Course_Managing::makecopy(void)
+{
+	for (int day = 0; day < 5; day++)
+		for (int paper = 0; paper < 2; paper++)
+			for (int sem = 0; sem < 8; sem++)
+				for (int voter = 0; voter < 10; voter++)
+					copy[day][paper][sem][voter] = votingdata[day][paper][sem][voter];
+}
+
+void Course_Managing::sem1(void) const
+{
+	cout << " 1. ME-104 ENGINEERING DRAWING\n";
+	cout << " 2. PHY-101 APPLIED PHYSICS\n";
+	cout << " 3. CS-113 INTTRODUCTION TO PROGRAMMING\n";
+	cout << " 4. HU-100 ENGLISH\n";
+	cout << " 5. HU-107 PAKISTAN STUDIES\n";
+	cout << " 6. MATH-101 CALCULUS AND ANALYTICAL GEOMETRY\n";
+	cout << " 7. MATH-121 LINEAR ALGEBRA AND ORDINARY DIFFERENTIAL EQUATIONS\n";
+}
+
+void Course_Managing::sem2(void) const
+{
+	cout << " 1. CS-212 OBJECT ORIENTED PROGRAMMING\n";
+	cout << " 2. EE-111 LINEAR CIRCUIT ANALYSIS\n";
+	cout << " 3. HU-101 ISLAMIC STUDIES\n";
+	cout << " 4. MATH-106 MULTIVARIABLE AND VECTOR CALCULUS\n";
+	cout << " 5. ME-100 ENGINEERING MECHANICS\n";
+	/*cout << " 6. ME-105 WORKSHOP PRACTICE\n";*/
+}
+
+void Course_Managing::sem3(void) const
+{
+	cout << " 1. CS-250 DATA STRUCTUES AND ALGORITHMS\n";
+	cout << " 2. EE-211 ELECTRICAL NETWORK ANALYSIS\n";
+	cout << " 3. EE-221 DIGITAL LOGIC DESIGN\n";
+	cout << " 4. MATH-232 COMPLEX VARIABLES AND TRANSFORMS\n";
+	cout << " 5. ME-102 THERMODYNAMICS\n";
+}
+
+void Course_Managing::sem4(void) const
+{
+	cout << " 1. EE-215 ELECTRONIC DEVICES AND CIRCUITS\n";
+	cout << " 2. EE-222 MICROPROCESSOR SYSTEMS\n";
+	cout << " 3. EE-232 SIGNALS AND SYSTEMS\n";
+	cout << " 4. HU-109 COMMUNICATION SKILLS\n";
+	cout << " 5. MATH-361 PROBABILITY AND STATISTICS\n";
+}
+
+void Course_Managing::sem5(void) const
+{
+	cout << " 1. EE-241 ELECTROMAGNETIC FIELD THEORY\n";
+	cout << " 2. EE-260 ELECTRICAL MECHANICS\n";
+	cout << " 3. EE-313 ELECTRONIC CIRCUIT DESIGN\n";
+	cout << " 4. EE-351 COMMUNICATION SYSTEMS\n";
+	cout << " 5. MATH-351 NUMERICAL METHODS\n";
+}
+
+void Course_Managing::sem6(void) const
+{
+	cout << " 1. EE-XXX CS-XXX ELECTIVE-I\n";
+	cout << " 2. ECO-130 ENGINEERING ECONOMICS\n";
+	cout << " 3. EE-330 DIGITAL SIGNAL PROCESSING\n";
+	cout << " 4. EE-379 CONTROL SYSTEMS\n";
+	cout << " 5. EE-383 INSTRUMENTATION AND MEASUREMENTS\n";
+}
+
+void Course_Managing::sem7(void) const
+{
+
+	cout << " 1. HU-212 TECHNICAL AND BUSINESS WRITING\n";
+	cout << " 2. OTM-455 ENGINEERING PROJECT MANAGEMENT\n";
+	cout << " 3. EE-XXX CS-XXX ELECTIVE-II\n";
+	cout << " 4. EE-XXX CS-XXX ELECTIVE-III\n";
+	cout << " 5. EE-XXX CS-XXX ELECTIVE-IV\n";
+	/*cout << " 6. EE-498 SENIOR DESIGN PROJECT-I\n";*/
+}
+
+void Course_Managing::sem8(void) const
+{
+	cout << " 1. HU-222 PROFESSIONAL ETHICS\n";
+	cout << " 2. MGT-271 ENTREPRENEURSHIP\n";
+	cout << " 3. EE-XXX CS-XXX ELECTIVE-V\n";
+	cout << " 4. XX-XXX UNIVERSITY ELECTIVE\n";
+	cout << " 5. No Exam";
+	/*cout << " 5. EE-499 SENIOR DESIGN PROJECT-II\n";
+	cout << " 6. EE-XXX CS-XXX ELECTIVE LAB\n";*/
+}
+
+Course_Managing::~Course_Managing() {};
